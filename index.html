@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eduviaje</title>
+    <link rel="icon" href="Library/Logo%20y%20icon/Sin-título-4-_1_.ico" type="image/x-icon">
+    <script src="Library/Assets/bootstrap.bundle.min.js"></script>
+    <script src="Library/Assets/color-modes.js"></script>
+    <link href="Library/Assets/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .carousel {
+        margin-bottom: 2rem; /* Adjusted for better responsiveness */
+      }
+
+      .carousel-caption {
+        bottom: 1rem; /* Adjusted for better responsiveness */
+        z-index: 10;
+      }
+
+      .carousel-item {
+        height: 50vh; /* Adjusted height to be responsive */
+        background-size: cover;
+        background-position: center center;
+      }
+
+      #fondo {
+        background-color: lightgray;
+        background-repeat: no-repeat;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-item {
+          height: 30vh; /* Smaller height for smaller screens */
+        }
+
+        .carousel-caption {
+          bottom: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .carousel-caption {
+          font-size: 0.8rem; /* Smaller font size on very small screens */
+        }
+
+        .featurette img {
+          width: 100%; /* Ensure images fit within their columns */
+        }
+      }
+
+      .featurette-divider {
+        margin: 3rem 0; /* Ensure the divider has space around it */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary rounded">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Eduviaje</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Informacion</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Sobre nosotros</a></li>
+                  <li><a class="dropdown-item" href="#">Opcion 2</a></li>
+                  <li><a class="dropdown-item" href="#">Opcion 3</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div>
+              <a class="btn btn-lg btn-primary mt-3 me-2" href="Register.html">Register</a>
+              <a class="btn btn-lg btn-primary mt-3" href="login.html">Login</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Carousel -->
+      <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" id="fondo" style="background-image: url('https://st2.depositphotos.com/16122460/43932/i/600/depositphotos_439329992-stock-photo-woman-hitchhiking-taxi-city-street.jpg');">
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1 class="text-light">Mision</h1>
+                <p class="text-light">Conectar a las personas de manera segura, eficiente y confiable, ofreciendo una experiencia de transporte excepcional que mejore la movilidad estudiantil y satisfaga las necesidades de nuestros clientes en cada viaje.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" id="fondo" style="background-image: url('https://st4.depositphotos.com/14015406/29727/i/600/depositphotos_297273624-stock-photo-beautiful-view-on-the-skyline.jpg');">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1 class="text-light">Vision</h1>
+                <p class="text-light">Ser la plataforma líder a nivel global en servicios de movilidad personalizada, utilizando tecnología innovadora para transformar la forma en que las personas se desplazan en las universidades, promoviendo un futuro más sostenible y accesible para todos.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" id="fondo" style="background-image: url('https://dircom.unah.edu.hn/dmsdocument/7514-unah-curla-horz-color-png');">
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <h1>Crea tu cuenta Ya!</h1>
+                <p><a class="btn btn-lg btn-primary" href="Register.html">Crear cuenta</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <!-- Featurettes -->
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Nosotros</h2>
+          <p class="lead">Una nueva compañia que aspira a servir a los estudiantes de la nacion con precios acomodables en todo momento</p>
+        </div>
+        <div class="col-md-5">
+          <img src="Library/Logo%20y%20icon/Sin%20título-2.png" class="img-fluid" alt="Nosotros">
+        </div>
+      </div>
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading fw-normal lh-1">Las mejores Rrevies</h2>
+          <p class="lead">Martin: Es lo mejor que he decubierto, esto me cambio la vida. Es tan facil y seguro que no me podria imaginar ahora sin usarla</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img src="https://embedsocial.com/wp-content/uploads/2023/08/google-5-star-rating.jpg" class="img-fluid" alt="Las mejores Rrevies">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading fw-normal lh-1">Un Carro</h2>
+          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id libero auctor, ornare sapien sed, ornare neque. Curabitur posuere orci ac justo porttitor, vel venenatis velit tincidunt. Morbi ligula massa, convallis vel dictum vel, aliquam in sapien. Suspendisse et diam vel eros fringilla aliquam sed ac leo. Integer in odio libero. Vestibulum imperdiet et ipsum eget interdum. Pellentesque nec magna euismod, bibendum risus vel, varius risus. Fusce nec diam at mauris hendrerit feugiat ac sit amet velit. Aliquam in pharetra nisi, et luctus lorem. In hac habitasse platea dictumst. Nulla ut malesuada urna. In hac habitasse platea dictumst. Duis a imperdiet lectus. Pellentesque non maximus ipsum, vel finibus felis.</p>
+        </div>
+        <div class="col-md-5">
+          <img src="https://www.karvi.com.ar/blog/wp-content/uploads/2020/10/208">
+            </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    </main>
+
+  <footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+    <p class="mb-1">Aqui se pondria todo lo que se quiera</p>
+    <p class="mb-0">Al igual que se pueden poner <a href="/">Links</a></p>
+  </div>
+  </footer>
+    </div>
+  </body>
+</html>
