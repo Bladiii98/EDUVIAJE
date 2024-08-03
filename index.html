@@ -4,34 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Eduviaje</title>
+    <!--TODO Aqui esta lo del Favicon-->
     <link rel="icon" href="Library/Logo%20y%20icon/Sin-título-4-_1_.ico" type="image/x-icon">
     <script src="Library/Assets/bootstrap.bundle.min.js"></script>
     <script src="Library/Assets/color-modes.js"></script>
     <link href="Library/Assets/bootstrap.min.css" rel="stylesheet">
     <style>
+      .btn-primary{
+            background:#91649d;
+            border: #91649d;
+      }
       .carousel {
-        margin-bottom: 2rem; /* Adjusted for better responsiveness */
+        margin-bottom: 2rem;
       }
 
       .carousel-caption {
-        bottom: 1rem; /* Adjusted for better responsiveness */
+        bottom: 1rem;
         z-index: 10;
       }
 
       .carousel-item {
-        height: 50vh; /* Adjusted height to be responsive */
+        height: 50vh;
         background-size: cover;
         background-position: center center;
       }
 
       #fondo {
-        background-color: lightgray;
+        background-color: #bda8cb;
         background-repeat: no-repeat;
       }
 
       @media (max-width: 768px) {
         .carousel-item {
-          height: 30vh; /* Smaller height for smaller screens */
+          height: 30vh;
         }
 
         .carousel-caption {
@@ -41,23 +46,23 @@
 
       @media (max-width: 576px) {
         .carousel-caption {
-          font-size: 0.8rem; /* Smaller font size on very small screens */
+          font-size: 0.8rem;
         }
 
         .featurette img {
-          width: 100%; /* Ensure images fit within their columns */
+          width: 100%;
         }
       }
 
       .featurette-divider {
-        margin: 3rem 0; /* Ensure the divider has space around it */
+        margin: 3rem 0;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary rounded">
+      <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary rounded" >
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Eduviaje</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">

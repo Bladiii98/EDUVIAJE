@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - EduViaje</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #86b1e3, #69acf4, #459dea, #3c064a, #58346f);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .card {
+            max-width: 100%;
+        }
+        .login-card {
+            background-color: #326ffd; /* Color de fondo rosado */
+        }
+        .btn-login {
+            background-color: #692dc3; /* Color morado */
+            border-color: #7b428b; /* Asegúrate de que el borde también sea morado */
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg login-card">
+                    <div class="row no-gutters">
+                        <!-- Sidebar con informacion -->
+                        <div class="col-md-6 d-none d-md-flex bg-primary text-white p-4 align-items-center flex-column">
+                            <h2 class="text-center mb-4">Te damos la bienvenida a EduViaje</h2>
+                            <p class="text-center">Donde podrás solicitar servicios de transporte que te asegurarán llegar a tiempo a tus clases.</p>
+                            <img src="eduviaje.jpg" alt="Dibujo de un carro" class="img-fluid mt-4">
+                        </div>
+                        <!-- Formulario de inicio de sesion -->
+                        <div class="col-md-6 p-4">
+                            <h2 class="text-center mb-4">Inicia sesión en EduViaje</h2>
+                            <form method="POST" action="index.html">
+                                <input type="hidden" name="next" value="{% url 'desired_page' %}">
+                                <div class="form-group">
+                                    <label for="username">Nombre de usuario</label>
+                                    <input type="text" name="username" id="username" required class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Contraseña</label>
+                                    <input type="password" name="password" id="password" required class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block btn-login">Iniciar sesión</button>
+                            </form>
+                            <p class="mt-4 text-center">
+                                ¿No tienes una cuenta? <a href="{% url 'signup' %}">Regístrate</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
