@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro usuario</title>
+    <style>
+
+body {
+    background-image:url("../../static/Assets/FondoEduviaje.jpg");
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+.container {
+    background-color: #69acf4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(141, 103, 103, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+
+
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #69acf4;
+    border-radius: 4px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #91649d;
+    color: #050101;
+    border: 2px solid #f7f7f8;
+    font-size: 16px;
+    cursor: pointer;
+
+button:hover {
+    background-color: #91649d;
+}
+}}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido Usuario </h1>
+        <form action="/submit" method="post">
+            <label>Estos datos son los que deve llenar para ser un usuario</label>          
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Numero de Telefono:</label>
+            <input type="cel" id="password" name="password" required>
+            <br>
+            <label for="profile-picture">Selecciona una foto de perfil de usuario:</label>
+            <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
+            
+            <label for="profile-picture">Selecciona la foto de tu carnet de estudinte o empleado:</label>
+            <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
+            <br>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>
+</html>

@@ -19,6 +19,7 @@
         }
     </style>
 </head>
+{% block content %}
 <body class="d-flex align-items-center justify-content-center min-vh-100">
     <div class="container">
         <div class="row justify-content-center">
@@ -27,16 +28,16 @@
                     <div class="row no-gutters">
                         <div class="col p-4">
                             <h2 class="text-center mb-4">Bienvenido a EduViaje</h2>
-                            <form method="POST" action="{% url 'register' %}">
-                                <input type="hidden" name="next" value="{% url 'desired_page' %}">
+                            <form method="POST" action="">
+                                {% csrf_token %}
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username"  placeholder="Nombre de usuario" class="form-control" required>
+                                    <input type="text" name="nombre" id="nombre"  placeholder="Nombre de usuario" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" placeholder="contraseña" class="form-control" required>
+                                    <input type="password" name="contraseña" id="contraseña" placeholder="contraseña" class="form-control" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" placeholder="Repetir Contraseña" class="form-control" required>
+                                    <input type="password" name="contraseña" id="contraseña" placeholder="Repetir Contraseña" class="form-control" required>
                                 </div>
                                   <div class="form-group">
                                     <input type="number" name="numCuenta" id="numCuenta" placeholder="Numero de Cuneta" class="form-control" required>
@@ -57,4 +58,5 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+{% endblock %}
 </html>
