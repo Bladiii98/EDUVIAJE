@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from usuarios import  views as usuarios_views
+
+import usuarios.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', usuarios_views.index),
+    path('Perfil/<int:id>/', usuarios_views.retrieve , name='retrieve')
 ]

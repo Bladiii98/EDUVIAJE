@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Eduviaje</title>
     <!--TODO Aqui esta lo del Favicon-->
-    <link rel="icon" href="Library/Logo%20y%20icon/Sin-título-4-_1_.ico" type="image/x-icon">
-    <script src="Library/Assets/bootstrap.bundle.min.js"></script>
-    <script src="Library/Assets/color-modes.js"></script>
-    <link href="Library/Assets/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../../static/Logo%20y%20icon/Sin-título-4-_1_.ico" type="image/x-icon">
+    <script src="../../static/Assets/bootstrap.bundle.min.js"></script>
+    <script src="../../static/Assets/color-modes.js"></script>
+    <link href="../../static/Assets/bootstrap.min.css" rel="stylesheet">
     <style>
       .btn-primary{
             background:#91649d;
@@ -59,6 +59,7 @@
       }
     </style>
   </head>
+  {% block content %}
   <body>
     <div class="container">
       <!-- Navbar -->
@@ -88,6 +89,7 @@
             <div>
               <a class="btn btn-lg btn-primary mt-3 me-2" href="Register.html">Register</a>
               <a class="btn btn-lg btn-primary mt-3" href="login.html">Login</a>
+              <a class="btn btn-lg btn-primary mt-3" href="{% url 'retrieve' 0 %}">Perfil</a>
             </div>
           </div>
         </div>
@@ -142,7 +144,7 @@
           <p class="lead">Una nueva compañia que aspira a servir a los estudiantes de la nacion con precios acomodables en todo momento</p>
         </div>
         <div class="col-md-5">
-          <img src="Library/Logo%20y%20icon/Sin%20título-2.png" class="img-fluid" alt="Nosotros">
+          <img src="../../Library/Logo%20y%20icon/Sin%20título-2.png" class="img-fluid" alt="Nosotros">
         </div>
       </div>
       <hr class="featurette-divider">
@@ -184,4 +186,5 @@
   </footer>
     </div>
   </body>
+{% endblock %}
 </html>
