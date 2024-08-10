@@ -69,29 +69,30 @@ button:hover {
 }}
     </style>
 </head>
+{% block content %}
 <body>
     <div class="container">
         <h1>Bienvenido Usuario </h1>
-        <form action="/submit" method="post">
+        <form action="" method="POST">
+            {% csrf_token %}
             <label>Estos datos son los que deve llenar para ser un usuario</label>          
-            <label for="name">Nombre Completo:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="">Correo Electrónico:</label>
+            <input type="email" id="correo_electronico" name="correo_electronico" required>
 
-            <label for="password">Numero de Telefono:</label>
-            <input type="cel" id="password" name="password" required>
-            <br>
-            <label for="profile-picture">Selecciona una foto de perfil de usuario:</label>
-            <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
-            
-            <label for="profile-picture">Selecciona la foto de tu carnet de estudinte o empleado:</label>
-            <input type="file" id="profile-picture" name="profile-picture" accept="image/*" required>
-            <br>
+            <label for="">Telefono:</label>
+            <input type="text" id="telefono" name="telefono" required>
+
+            <label for="">contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+
             <button type="submit">Registrarse</button>
         </form>
     </div>
 </body>
+{% endblock %}
 </html>
 </html>

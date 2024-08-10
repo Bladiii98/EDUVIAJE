@@ -10,6 +10,18 @@
     <script src="../../static/Assets/color-modes.js"></script>
     <link href="../../static/Assets/bootstrap.min.css" rel="stylesheet">
     <style>
+        body {
+            background: linear-gradient(45deg, #2472cd, #69acf4, #0745a4, #91649d, #bda8cb);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+    <style>
       .btn-primary{
             background:#91649d;
             border: #91649d;
@@ -60,7 +72,7 @@
     </style>
   </head>
   {% block content %}
-  <body>
+  <body >
     <div class="container">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary rounded" >
@@ -87,7 +99,8 @@
               </li>
             </ul>
             <div>
-              <a class="btn btn-lg btn-primary mt-3 me-2" href="{% url 'create' %}">Register</a>
+              <a class="btn btn-lg btn-primary mt-3 me-2" href="{% url 'create' %}">Register Conduc</a>
+              <a class="btn btn-lg btn-primary mt-3 me-2" href="{% url 'create2' %}">Register User</a>
               <a class="btn btn-lg btn-primary mt-3" href="login.html">Login</a>
               <a class="btn btn-lg btn-primary mt-3" href="{% url 'retrieve' 1 %}">Perfil</a>
             </div>

@@ -23,7 +23,8 @@ import usuarios.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', usuarios_views.index),
+    path('', usuarios_views.index, name='index'),
     path('Perfil/<int:id>/', usuarios_views.retrieve , name='retrieve'),
     path('conductor',conductores_views.create,name='create'),
+    path('usuario',usuarios_views.create,name='create2'),
 ]

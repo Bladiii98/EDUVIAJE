@@ -9,14 +9,18 @@ def retrieve(request, id):
     perfil = Usuario.objects.get(pk = id)
     return render(request,'Perfil.html', {"perfil":perfil})
 def create(request):
-    nombre = request.POST['nombre']
-    correo_electronico = request.POST['correo_electronico']
-    telefono = request.POST['telefono']
+
+    if request.method == 'POST':
+        nombre = request.POST['nombre']
+        correo_electronico = request.POST['correo_electronico']
+        telefono = request.POST['telefono']
 
 
-    perfil = Usuario(nombre=nombre,correo_electronico=correo_electronico,telefono=telefono)
-    perfil.save()
+        perfil = Usuario(nombre=nombre,correo_electronico=correo_electronico,telefono=telefono)
+        perfil.save()
 
-    return redirect('index')
+        return redirect('index')
+
+    return render(request,'Usuario.html')
 
 
