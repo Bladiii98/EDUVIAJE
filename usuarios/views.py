@@ -11,12 +11,14 @@ def retrieve(request, id):
 def create(request):
 
     if request.method == 'POST':
-        nombre = request.POST['nombre']
-        correo_electronico = request.POST['correo_electronico']
-        telefono = request.POST['telefono']
+        name = request.POST['name']
+        mail = request.POST['mail']
+        phone = request.POST['phone']
+        accountNumber = request.POST['accountNumber']
+        password = request.POST['password']
 
 
-        perfil = Usuario(nombre=nombre,correo_electronico=correo_electronico,telefono=telefono)
+        perfil = Usuario(name=name,mail=mail,phone=phone,accountNumber=accountNumber,password=password)
         perfil.save()
 
         return redirect('index')

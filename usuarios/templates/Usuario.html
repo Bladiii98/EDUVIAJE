@@ -77,17 +77,19 @@ button:hover {
             {% csrf_token %}
             <label>Estos datos son los que deve llenar para ser un usuario</label>          
             <label for="">Nombre Completo:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="name" name="name" required>
 
             <label for="">Correo Electrónico:</label>
-            <input type="email" id="correo_electronico" name="correo_electronico" required>
+            <input type="email" id="mail" name="mail" required>
 
             <label for="">Telefono:</label>
-            <input type="text" id="telefono" name="telefono" required>
+            <input type="text" id="phone" name="phone" required>
 
             <label for="">contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" required>
+            <input type="password" id="password" name="password" required>
 
+            <label for="">Numero de Cuenta::</label>
+            <input type="number" id="accountNumber" name="accountNumber" required>
 
             <button type="submit">Registrarse</button>
         </form>

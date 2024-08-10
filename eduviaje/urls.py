@@ -16,15 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from usuarios import  views as usuarios_views
-from conductores import views as conductores_views
+from usuarios import  views as userViews
+from conductores import views as driverViews
 
 import usuarios.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', usuarios_views.index, name='index'),
-    path('Perfil/<int:id>/', usuarios_views.retrieve , name='retrieve'),
-    path('conductor',conductores_views.create,name='create'),
-    path('usuario',usuarios_views.create,name='create2'),
+    path('', userViews.index, name='index'),
+    path('Perfil/<int:id>/', userViews.retrieve , name='retrieve'),
+    path('conductor',driverViews.create,name='create'),
+    path('usuario',userViews.create,name='create2'),
 ]

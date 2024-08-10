@@ -5,12 +5,13 @@ from .models import Conductor
 def create(request):
 
     if request.method == 'POST':
-        nombre = request.POST['nombre']
-        correo_electronico = request.POST['correo_electronico']
-        contrasena = request.POST['contrasena']
+        name = request.POST['name']
+        mail = request.POST['mail']
+        password = request.POST['password']
+        phone = request.POST['phone']
 
 
-        perfil = Conductor(nombre=nombre,correo_electronico=correo_electronico,contrasena=contrasena)
+        perfil = Conductor(name=name,mail=mail,password=password,phone=phone)
         perfil.save()
         return redirect('index')
 
