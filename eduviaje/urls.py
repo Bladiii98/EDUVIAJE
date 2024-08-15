@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', userViews.index, name='index'),
     path('Perfil/<int:id>/', userViews.retrieve , name='retrieve'),
+    path('registro', userViews.seleccion, name="seleccion"),
     path('conductor',driverViews.create,name='create'),
     path('usuario',userViews.create,name='create2'),
 ]

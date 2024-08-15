@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viaje</title>
+     <link rel="icon" href="../../static/Logo%20y%20icon/Sin-título-4-_1_.ico" type="image/x-icon">
+    <script src="../../static/Assets/bootstrap.bundle.min.js"></script>
+    <link href="../../static/Assets/bootstrap.min.css" rel="stylesheet">
+</head>
+{% block content %}
+<body>
+    <div class="container-md">
+        <div class="row card">
+            <h2 class="text-center mb-4">Salir de UNAH</h2>
+            <hr>
+              <form action="" method="POST">
+              {% csrf_token %}
+                 <select id="destini"  name="destiny">
+                    <option selected>Open this select menu</option>
+                        <option value="San francisco">San francisco</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                 <br>
+                 <br>
+              <hr>
+              <div class="d-grid gap-2 col-6 mx-auto mb-3">
+              <button type="submit" class="btn btn-success">IR!</button>
+              </div>
+            </form>
+        </div>
+
+        <div class="row card ">
+            <h2 class="text-center mb-4">Ir a UNAH</h2>
+            <hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <select id="origin" name="origin">
+                    <option selected>Open this select menu</option>
+                        <option value="San francisco">San francisco</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                <br>
+                <br>
+                <hr>
+                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                <button type="submit" class="btn btn-success">IR!</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}
+</body>
+</html>

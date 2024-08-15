@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conductor Usuario</title>
+    <style>
+        body{
+            background-size: cover;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.144), rgba(255, 255, 255, 0.144)),url("eduviajelec.png");
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            color: #000000 ;
+            padding: 10px;      
+        
+        h2{
+            text-align: center;
+        }
+        header{
+        
+            display: flex;
+            height: 70px;
+            background-color: rgb(220, 252, 252);
+            justify-content: space-between;
+        }
+        .logo{
+            display: flex;
+        }
+        .logo img{
+            height: 50px;
+        }
+        }
+        #content1{
+            color: rgb(255, 255, 255) ;
+            width: 80%;
+            border-radius: 20px;
+            margin: auto; 
+            background-image: linear-gradient(rgba(1, 0, 46, 0.297), rgba(1, 0, 46, 0.904)),
+                  url("https://www.emagister.com/blog/wp-content/uploads/2019/04/ch%C3%B3fer-privado-462x308.jpg");
+            background-size: cover;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        #content2{
+            color: rgb(255, 244, 244) ;
+            width: 80%;
+            border-radius: 20px;
+            margin: auto; 
+            background-image: linear-gradient(rgba(1, 0, 46, 0.293), rgba(1, 0, 46, 0.904)),
+                  url("https://img.freepik.com/foto-gratis/cerrar-amigos-sonrientes-coche_23-2149137194.jpg");
+            background-size: cover;
+            padding: 15px;
+            text-align: center;
+        }
+        #content3{
+            color: rgb(255, 255, 255) ;
+            width: 80%;
+            border-radius: 20px;
+            margin: auto; 
+            background-image: linear-gradient(rgba(1, 0, 46, 0.297), rgba(1, 0, 46, 0.904)),
+                  url("https://www.emagister.com/blog/wp-content/uploads/2019/04/ch%C3%B3fer-privado-462x308.jpg");
+            background-size: cover;
+            padding: 30px;
+        }
+        .boton{
+            font-family:Arial, Helvetica, sans-serif;
+            background-color: #f469b5;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+          }</style>
+</head>
+{% block content %}
+<body>
+    <header>
+    <div class="logo">
+        <img src="isologo.png" alt="isologoEduviaje">
+        <h1>EDUVIAJE</h1>
+    </div>
+    </header>
+    <div id="container">
+        </header>
+        <h2>La plataforma universitaria hecha por y para estudiantes donde puedes viajar de forma economica y segura</h2>
+        <br>
+        <section id="content1">
+                <h3>Deseo ser piloto</h3>
+                <p>¿Cuentas con vehículo o motocicleta y tienes espacio disponible para llevar a alguien con quien compartes destino?</p>
+                <p>Pon tu medio de transporte y tus habilidades al servicio de tus comañeros universitarios</p>
+                <p>
+                <br>
+                <a class="boton" href="{% url 'create' %}">Registrarme como piloto</a>
+                <br>
+                <br>
+
+        </section>
+        <br>
+        <section id="content2">
+            <h3>Deseo ser un acompañante</h3>
+            <p>Viaja de manera segura con un compañero universitario con quien compartes destino, para que evites viajar con desconocidos en el transporte público a un precio económico y con la confianza de viajar en compañia de un puma al volante</p>
+            <br><br>
+            <a class="boton" href="{% url 'create2' %}">Registrarme como Usuario</a>
+            <br>
+            <br>
+        </section>
+    </div>
+</body>
+{% endblock %}
+</html>

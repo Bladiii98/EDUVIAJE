@@ -25,4 +25,7 @@ def create(request):
 
     return render(request,'Usuario.html')
 
+def seleccion(request):
+   return render(request,"seleccion.html")
+
 
