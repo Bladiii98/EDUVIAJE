@@ -99,21 +99,9 @@
               </li>
             </ul>
             <div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <a class="btn btn-lg btn-primary mt-3 me-2" href="{% url 'selection' %}">Register</a>
-{#                {% if usuario.mail != "" %}#}
-                <li class="nav-item dropdown">
-                <a class="btn btn-lg btn-primary mt-3" href="#" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
-                <ul class="dropdown-menu mt-3">
-                  <li><a class="dropdown-item" href="{% url 'loginU' %}">Para Usuarios</a></li>
-                  <li><a class="dropdown-item" href="{% url 'loginD' %}">Para Conductores</a></li>
-                </ul>
-{#                {% else %}#}
-                <a class="btn btn-lg btn-primary mt-3" href="{% url 'retrieve' 1 %}">Perfil</a>
-                <a class="btn btn-lg btn-primary mt-3" href="{% url 'crearViaje'  %}">viaje</a>
-{#                {% endif %}#}
-              </li>
-            </ul>
+              <a class="btn btn-lg btn-primary mt-3 me-2" href="{% url 'seleccion' %}">Register</a>
+              <a class="btn btn-lg btn-primary mt-3" href="login.html">Login</a>
+              <a class="btn btn-lg btn-primary mt-3" href="{% url 'retrieve' 1 %}">Perfil</a>
             </div>
           </div>
         </div>
@@ -147,7 +135,7 @@
             <div class="container">
               <div class="carousel-caption text-end">
                 <h1>Crea tu cuenta Ya!</h1>
-                <p><a class="btn btn-lg btn-primary" href="{% url 'selection' %}">Crear cuenta</a></p>
+                <p><a class="btn btn-lg btn-primary" href="Register.html">Crear cuenta</a></p>
               </div>
             </div>
           </div>
