@@ -10,7 +10,7 @@
     <link href="../../static/Assets/bootstrap.min.css" rel="stylesheet">
 </head>
 {% block content %}
-<body style="background-image: url('../../static/Logo%20y%20icon/Background.jpg') " >
+<body style="background-image: url('../../static/Logo y icon/Background.jpg') " >
     <section>
   <div class="container py-5">
     <div class="row">
@@ -23,20 +23,10 @@
         </nav>
       </div>
     </div>
-
-    <div class="row">
-        <div class="col-lg-3">
-            <div class="card mb-4">
-                <div class="card-body text-center">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
-                class="rounded-circle img-fluid" style="width: 150px;">
-                <h5 class="my-3">{{ perfil.name }}</h5>
-                <p class="text-muted mb-1">Estudiante</p>
-                <p class="text-muted mb-4">Francisco Morazan, Ciudad Universitaria, UNAH</p>
-                </div>
-            </div>
-        </div>
-      <div class="col-lg-8">
+    <form action="" method="POST">
+    {% csrf_token %}
+    <div class="row justify-content-md-center">
+      <div class="col-lg-8 ">
         <div class="card mb-4">
           <div class="card-body">
               <div class="row">
@@ -44,7 +34,7 @@
                 <p class="mb-0">Nombre Completo</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{ perfil.name }}</p>
+               <input type="text" name="name" id="name" value='{{ perfil.name }}'>
               </div>
             </div>
             <hr>
@@ -53,7 +43,7 @@
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{ perfil.mail }}</p>
+               <input type="text" name="mail" id="mail" value='{{ perfil.mail }}'>
               </div>
             </div>
             <hr>
@@ -62,16 +52,7 @@
                 <p class="mb-0">Celular</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">{{ perfil.phone }}</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Calificacion</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">{{ perfil.score }}</p>
+                <input type="text" name="phone" id="phone" value="{{ perfil.phone }}">
               </div>
             </div>
             <hr>
@@ -87,13 +68,12 @@
         </div>
       </div>
     </div>
-
     <div class="row justify-content-md-center">
          <div class="col-md-auto">
-        <a class="btn btn-primary" href="{% url 'edit' perfil.pk %}" role="button">Cambiar Datos</a>
+        <button class="btn btn-primary" type="submit">Cambiar Datos</button>
          </div>
     </div>
-
+    </form>
   </div>
 </section>
 </body>

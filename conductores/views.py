@@ -16,3 +16,13 @@ def create(request):
         return redirect('index')
 
     return render(request, 'Conductor.html')
+
+def login(request):
+    if request.method == 'POST':
+        conductor = Conductor.objects.get(name='name')
+        if conductor.password == request.POST['password']:
+            return redirect("index",{"conductor":conductor})
+        else:
+            pass
+
+    return render(request, 'login.html')
