@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from usuarios import  views as userViews
 from conductores import views as driverViews
+from viajes import views as viajesViews
 
 import usuarios.views
 
@@ -29,7 +30,8 @@ urlpatterns = [
     path('login/User',userViews.login, name='loginU'),
     path('login/Driver',driverViews.login, name='loginD'),
     path('registro', userViews.seleccion, name="selection"),
-    path('conductor',driverViews.create,name='create'),
-
+    path('conducto',driverViews.create,name='create'),
     path('usuario',userViews.create,name='create2'),
+    path('viajar',driverViews.recibirViaje ,name='viajar'),
+    path('crear',userViews.crearViaje, name="crearViaje"),
 ]

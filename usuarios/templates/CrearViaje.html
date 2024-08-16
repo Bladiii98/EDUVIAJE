@@ -10,46 +10,67 @@
 {% block content %}
 <body>
     <div class="container-md">
-        <div class="row card">
-            <h2 class="text-center mb-4">Salir de UNAH</h2>
-            <hr>
-              <form action="" method="POST">
-              {% csrf_token %}
-                 <select id="destini"  name="destiny">
-                    <option selected>Open this select menu</option>
-                        <option value="San francisco">San francisco</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                 <br>
-                 <br>
-              <hr>
-              <div class="d-grid gap-2 col-6 mx-auto mb-3">
-              <button type="submit" class="btn btn-success">IR!</button>
-              </div>
-            </form>
-        </div>
-
+{#        <div class="row card">#}
+{#            <h2 class="text-center mb-4">Salir de UNAH</h2>#}
+{#            <hr>#}
+{#              <form action="" method="POST">#}
+{#              {% csrf_token %}#}
+{#                 <select id="destiny"  name="destiny">#}
+{#                    <option selected>Open this select menu</option>#}
+{#                        <option value="San francisco">San francisco</option>#}
+{#                        <option value="2">2</option>#}
+{#                        <option value="3">3</option>#}
+{#                        <option value="4">4</option>#}
+{#                        <option value="5">5</option>#}
+{#                    </select>#}
+{#                 <br>#}
+{#                 <br>#}
+{#              <hr>#}
+{#              <div class="d-grid gap-2 col-6 mx-auto mb-3">#}
+{#              <button type="submit" class="btn btn-success">IR!</button>#}
+{#              </div>#}
+{#            </form>#}
+{#        </div>#}
         <div class="row card ">
-            <h2 class="text-center mb-4">Ir a UNAH</h2>
             <hr>
             <form action="" method="POST">
                 {% csrf_token %}
-                <select id="origin" name="origin">
+                <label for="origin">Origen</label><select id="origin" name="origin">
                     <option selected>Open this select menu</option>
-                        <option value="San francisco">San francisco</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <option value="La kenedy">La kenedy</option>
+                        <option value="Las Uvas">Las Uvas</option>
+                        <option value="El Pedregal">El Pedregal</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="El Sauce">El Sauce</option>
+                        <option value="UNAH">UNAH</option>
                     </select>
                 <br>
                 <br>
+                <label for="destiny">Destino</label><select id="destiny" name="destiny">
+                    <option selected>Open this select menu</option>
+                        <option value="La kenedy">La kenedy</option>
+                        <option value="Las Uvas">Las Uvas</option>
+                        <option value="El Pedregal">El Pedregal</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="El Sauce">El Sauce</option>
+                        <option value="UNAH">UNAH</option>
+                    </select>
+                <br>
+                <br>
+                <label for="userId">Usuario</label><select id="userId" name="userId">
+                    <option selected>Open this select menu</option>
+                        <option value="1">Alfredo</option>
+                        <option value="2">Kenia</option>
+                        <option value="3">Javier</option>
+                        <option value="4">Marcelo</option>
+                        <option value="5">Maria</option>
+                    </select>
+                <br>
+                <br>
+                <label>Costo</label><input type="number" id="costo" name="costo" required>
                 <hr>
                 <div class="d-grid gap-2 col-6 mx-auto mb-3">
-                <button type="submit" class="btn btn-success">IR!</button>
+                <button type="submit" class="btn btn-success" href="{% url 'viajar'  %}">IR!</button>
                 </div>
             </form>
         </div>

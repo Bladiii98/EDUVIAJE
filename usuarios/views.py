@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Usuario
-
+from conductores.models import Conductor
+from viajes.models import Viaje
 
 # Create your views here.
 def index(request):
@@ -58,3 +59,20 @@ def login(request):
             pass
 
     return render(request, 'login.html')
+
+def crearViaje(request):
+    if request.method == 'POST':
+        if request.method == 'POST':
+            origin = request.POST['origin']
+            destiny = request.POST['destiny']
+            userId = request.POST['userId']
+            costo = request.POST['costo']
+
+            viaje = Viaje(origin=origin, destiny=destiny, user=Usuario.objects.get(pk=userId), status=False,cost=costo)
+            viaje.save()
+
+            viajes = Viaje.objects.all()
+            conductor = Conductor.objects.all()
+            return render(request, 'RecibirViaje.html', {"viajes": viajes, "conductor": conductor})
+
+    return render(request, 'CrearViaje.html')

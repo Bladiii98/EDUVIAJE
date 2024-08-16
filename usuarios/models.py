@@ -11,4 +11,5 @@ class Usuario(models.Model):
     history = models.TextField(default="")
 
 
-    # Métodos: registrarse(), iniciarSesion(), etc.
+    def __str__(self):
+        return f"{self.name} Celular#{self.phone}"

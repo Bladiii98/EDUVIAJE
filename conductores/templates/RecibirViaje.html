@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" href="../../static/Logo%20y%20icon/Sin-título-4-_1_.ico" type="image/x-icon">
+    <script src="../../static/Assets/bootstrap.bundle.min.js"></script>
+    <script src="../../static/Assets/color-modes.js"></script>
+    <link href="../../static/Assets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<table class="table table-hover mt-5">
+    <thead class="table-primary">
+        <th>Nombre</th>
+        <th>Password</th>
+        <th>Phone</th>
+    </thead>
+    <tbody>
+    {% for item in conductor %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.password }}</td>
+        <td>{{ item.phone }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<table class="table table-hover mt-5">
+    <thead class="table-primary">
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Usuario</th>
+    </thead>
+    <tbody>
+    {% for item in viajes %}
+    <tr>
+        <td>{{ item.origin }}</td>
+        <td>{{ item.destiny }}</td>
+        <td>{{ item.user }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
