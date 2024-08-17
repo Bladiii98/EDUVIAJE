@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil Eduviaje</title>
+    <link rel="icon" href="../../static/Logo%20y%20icon/Sin-título-4-_1_.ico" type="image/x-icon">
+    <script src="../../static/Assets/bootstrap.bundle.min.js"></script>
+    <script src="../../static/Assets/color-modes.js"></script>
+    <link href="../../static/Assets/bootstrap.min.css" rel="stylesheet">
+</head>
+{% block content %}
+<body style="background-image: url('../../static/Logo y icon/Background.jpg') " >
+    <section>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="bg-body-tertiary rounded-3 p-3 mb-4">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    <form action="" method="POST">
+    {% csrf_token %}
+    <div class="row justify-content-md-center">
+      <div class="col-lg-8 ">
+        <div class="card mb-4">
+          <div class="card-body">
+              <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Nombre Completo</p>
+              </div>
+              <div class="col-sm-9">
+               <input type="text" name="name" id="name" value='{{ perfil.name }}'>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+               <input type="text" name="mail" id="mail" value='{{ perfil.mail }}'>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Celular</p>
+              </div>
+              <div class="col-sm-9">
+                <input type="text" name="phone" id="phone" value="{{ perfil.phone }}">
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Numero de Cuenta</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">20242220111</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+         <div class="col-md-auto">
+        <button class="btn btn-primary" type="submit">Cambiar Datos</button>
+         </div>
+    </div>
+    </form>
+  </div>
+</section>
+</body>
+{% endblock %}
+</html>

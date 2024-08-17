@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - EduViaje</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #86b1e3, #69acf4, #459dea, #3c064a, #58346f);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .card {
+            max-width: 100%;
+        }
+        .login-card {
+            background-color: #326ffd; /* Color de fondo rosado */
+        }
+        .btn-login {
+            background-color: #692dc3; /* Color morado */
+            border-color: #7b428b; /* Asegúrate de que el borde también sea morado */
+        }
+        /* Estilo personalizado para la imagen del logo */
+        .logo-img {
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto;
+        }
+        /* Estilos para el navbar */
+        .custom-navbar {
+            background-color: #004085; /* Color de fondo azul oscuro */
+        }
+        .custom-navbar .nav-link {
+            color: white; /* Color de los enlaces en blanco */
+        }
+        .custom-navbar .nav-link:hover {
+            color: #ffc107; /* Color de los enlaces al pasar el mouse */
+        }
+        /* Estilos para el footer */
+        footer {
+            background-color: #326ffd;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+{% block content %}
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}">Página Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'selection' %}">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Información</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg login-card">
+                    <div class="row no-gutters">
+                            <table class="table">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>Origen</th>
+                                        <th>Destino</th>
+                                        <th>Costo</th>
+                                        <th>Usuario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ viajes.origin }}</td>
+                                    <td>{{ viajes.destiny }}</td>
+                                    <td>{{ viajes.cost }}</td>
+                                    <td>{{ viajes.user }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        <form action="{% url 'pagarViaje' viajes.pk %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-block">PAGAR</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 EduViaje. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+{% endblock %}
+</html>

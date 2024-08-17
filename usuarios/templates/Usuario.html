@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro usuario</title>
+    <style>
+
+body {
+    background-image:url("../../static/Assets/FondoEduviaje.jpg");
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+.container {
+    background-color: #69acf4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(141, 103, 103, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+
+
+}
+
+input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #69acf4;
+    border-radius: 4px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #91649d;
+    color: #050101;
+    border: 2px solid #f7f7f8;
+    font-size: 16px;
+    cursor: pointer;
+
+button:hover {
+    background-color: #91649d;
+}
+}}
+    </style>
+</head>
+{% block content %}
+<body>
+    <div class="container">
+        <h1>Bienvenido Usuario </h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label>Estos datos son los que deve llenar para ser un usuario</label>          
+            <label for="">Nombre Completo:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="">Correo Electrónico:</label>
+            <input type="email" id="mail" name="mail" required>
+
+            <label for="">Telefono:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="">contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="">Numero de Cuenta::</label>
+            <input type="number" id="accountNumber" name="accountNumber" required>
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+</body>
+{% endblock %}
+</html>
+</html>

@@ -16,7 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from usuarios import  views as userViews
+from conductores import views as driverViews
+from viajes import views as viajesViews
+
+import usuarios.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', userViews.index, name='index'),
+    path('Perfil/<int:id>/', userViews.retrieve , name='retrieve'),
+    path('Perfil/<int:id>/Edit', userViews.edit, name='edit'),
+    path('login/User',userViews.login, name='loginU'),
+    path('login/Driver',driverViews.login, name='loginD'),
+    path('registro', userViews.seleccion, name="selection"),
+    path('conducto',driverViews.create,name='create'),
+    path('usuario',userViews.create,name='create2'),
+    path('viajar/<int:id>',driverViews.recibirViaje ,name='viajar'),
+    path('crear/',userViews.crearViaje, name="crearViaje"),
+    path('pagar/<int:id>',userViews.pagarViaje ,name="pagarViaje"),
+    path('elegir/<int:iddriver>/<int:idviaje>',driverViews.elegirViaje, name='recibir'),
 ]

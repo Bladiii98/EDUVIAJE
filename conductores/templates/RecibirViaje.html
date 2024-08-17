@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" href="../../static/Logo%20y%20icon/Sin-título-4-_1_.ico" type="image/x-icon">
+    <script src="../../static/Assets/bootstrap.bundle.min.js"></script>
+    <script src="../../static/Assets/color-modes.js"></script>
+    <link href="../../static/Assets/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url("../../static/Logo%20y%20icon/Background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px; /* Añado un poco de padding para evitar que el contenido toque los bordes en pantallas pequeñas */
+        }
+        .table-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: rgba(248, 249, 250, 0.8); /* Hacer el fondo de la tabla semi-transparente */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* Permitir desplazamiento horizontal en pantallas pequeñas */
+        }
+        .navbar, .footer {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .footer {
+            margin-top: auto;
+        }
+
+        /* Media Queries para hacer la página responsive */
+        @media (max-width: 768px) {
+            .navbar h1 {
+                font-size: 1.5rem; /* Reducir el tamaño del título en pantallas pequeñas */
+            }
+            .table-container {
+                padding: 15px;
+            }
+            table {
+                font-size: 0.9rem; /* Reducir el tamaño de la fuente en pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .navbar h1 {
+                font-size: 1.25rem; /* Ajustar más el tamaño del título */
+            }
+            .table-container {
+                padding: 10px;
+            }
+            table {
+                font-size: 0.8rem; /* Ajustar más el tamaño de la fuente */
+            }
+            .container {
+                padding: 10px; /* Reducir el padding general en pantallas muy pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <h1>Mis viajes</h1>
+</nav>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="table-container">
+        <table class="table table-hover mt-5">
+            <thead class="table-primary">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Vehiculo</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ conductor.name }}</td>
+                <td>{{ conductor.vehicle }}</td>
+                <td>{{ conductor.phone }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table class="table table-hover mt-5">
+            <thead class="table-primary">
+                <tr>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Usuario</th>
+                    <th>Paga</th>
+                    <th>Aceptar Viaje</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in viajes %}
+            <tr>
+                <td>{{ item.origin }}</td>
+                <td>{{ item.destiny }}</td>
+                <td>{{ item.user }}</td>
+                <td>{{ item.cost }}</td>
+                <td>
+                    <form action="{% url 'recibir'  conductor.pk item.pk%}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-block">Elegir</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>Eduviaje derechos reservados  &copy; 2024, UNAH. Clase de POO.</p>
+</footer>
+
+</body>
+</html>

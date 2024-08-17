@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viaje</title>
+    <link rel="icon" href="../../static/Logo y icon/Sin-título-4-_1_.ico" type="image/x-icon">
+    <link href="../../static/Assets/bootstrap.min.css" rel="stylesheet">
+    <script src="../../static/Assets/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-top: 56px;
+            background-image: url('../../static/Logo y icon/Fondo2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .navbar {
+            background-color: #007bff;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .container-md {
+            margin-top: 30px;
+        }
+        .card {
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0.95;
+        }
+        label {
+            font-weight: bold;
+        }
+        .btn-success {
+            background-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">EDUVIAJE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Página Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href={% url 'retrieve' 2%}>Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Viajes</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-md">
+        <div class="row card">
+            <h2 class="text-center">Creación de Viaje</h2>
+            <hr>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <label for="origin">Origen</label>
+                <select id="origin" name="origin" class="form-select">
+                    <option selected>Open this select menu</option>
+                    <option value="La kenedy">La kenedy</option>
+                    <option value="Las Uvas">Las Uvas</option>
+                    <option value="El Pedregal">El Pedregal</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="El Sauce">El Sauce</option>
+                    <option value="UNAH">UNAH</option>
+                </select>
+                <br>
+                <label for="destiny">Destino</label>
+                <select id="destiny" name="destiny" class="form-select">
+                    <option selected>Open this select menu</option>
+                    <option value="La kenedy">La kenedy</option>
+                    <option value="Las Uvas">Las Uvas</option>
+                    <option value="El Pedregal">El Pedregal</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="El Sauce">El Sauce</option>
+                    <option value="UNAH">UNAH</option>
+                </select>
+                <br>
+                <label for="userId">Usuario</label>
+                <select id="userId" name="userId" class="form-select">
+                    <option selected>Open this select menu</option>
+                    <option value="1">Alfredo</option>
+                    <option value="2">Kenia</option>
+                    <option value="3">Javier</option>
+                    <option value="4">Marcelo</option>
+                    <option value="5">Maria</option>
+                </select>
+                <br>
+                <label for="costo">Costo</label>
+                <input type="number" id="costo" name="costo" class="form-control" required>
+                <hr>
+                <div class="d-grid gap-2 col-6 mx-auto mb-3">
+                    <button type="submit" class="btn btn-success">IR!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 EDUVIAJE. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
