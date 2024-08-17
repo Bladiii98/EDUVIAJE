@@ -26,11 +26,58 @@
             background-color: #692dc3; /* Color morado */
             border-color: #7b428b; /* Asegúrate de que el borde también sea morado */
         }
+        /* Estilo personalizado para la imagen del logo */
+        .logo-img {
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto;
+        }
+        /* Estilos para el navbar */
+        .custom-navbar {
+            background-color: #004085; /* Color de fondo azul oscuro */
+        }
+        .custom-navbar .nav-link {
+            color: white; /* Color de los enlaces en blanco */
+        }
+        .custom-navbar .nav-link:hover {
+            color: #ffc107; /* Color de los enlaces al pasar el mouse */
+        }
+        /* Estilos para el footer */
+        footer {
+            background-color: #326ffd;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 {% block content %}
-<body class="d-flex align-items-center justify-content-center min-vh-100">
-    <div class="container">
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Página Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Registrarse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Información</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container d-flex align-items-center justify-content-center min-vh-100">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
                 <div class="card shadow-lg login-card">
@@ -39,7 +86,8 @@
                         <div class="col-md-6 d-none d-md-flex bg-primary text-white p-4 align-items-center flex-column">
                             <h2 class="text-center mb-4">Te damos la bienvenida a EduViaje</h2>
                             <p class="text-center">Donde podrás solicitar servicios de transporte que te asegurarán llegar a tiempo a tus clases.</p>
-                            <img src="eduviaje.jpg" alt="Dibujo de un carro" class="img-fluid mt-4">
+                            <!-- Imagen del logo -->
+                            <img src="../../static/Logo y icon/Sin título-3.png" alt="Logo" class="img-fluid logo-img">
                         </div>
                         <!-- Formulario de inicio de sesion -->
                         <div class="col-md-6 p-4">
@@ -65,6 +113,12 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 EduViaje. Todos los derechos reservados.</p>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
