@@ -110,7 +110,7 @@
         }
     </style>
 </head>
-
+{% block content %}
 <body>
     <!-- Barra de Navegación -->
     <nav>
@@ -123,7 +123,7 @@
         <div class="form-section">
             <h1>Registro Conductor</h1>
             <form action="" method="POST">
-
+                {% csrf_token %}
                 <label>Nombre Completo:</label>
                 <input type="text" id="name" name="name">
 
@@ -141,5 +141,5 @@
         </div>
     </div>
 </body>
-
+{% endblock %}
 </html>

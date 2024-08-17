@@ -29,19 +29,15 @@ def login(request):
 
     return render(request, 'login.html')
 
-def recibirViaje(request):
-
-    if request.method == 'POST':
-        origin = request.POST['origin']
-        destiny = request.POST['destiny']
-        userId = request.POST['userId']
-        costo = request.POST['costo']
-        viaje = Viaje(origin=origin,destiny=destiny,user=Usuario.objects.get(pk=userId),status=False,cost=costo)
-        viaje.save()
-        viajes = Viaje.objects.all()
-        conductor = Conductor.objects.all()
-        return render(request, 'RecibirViaje.html', {"viajes": viajes, "conductor": conductor})
-
+def recibirViaje(request,id):
     viajes = Viaje.objects.all()
-    conductor = Conductor.objects.all()
+    conductor = Conductor.objects.get(pk=id)
     return render(request, 'RecibirViaje.html' ,{"viajes": viajes,"conductor":conductor})
+
+def elegirViaje(request,iddriver,idviaje):
+    if request.method == 'POST':
+        conductor = Conductor.objects.get(pk=iddriver)
+        viaje = Viaje.objects.get(pk=idviaje)
+        viaje.driver = conductor
+        viaje.save()
+        return redirect('index')

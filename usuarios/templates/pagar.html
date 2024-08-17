@@ -82,32 +82,28 @@
             <div class="col-md-8 col-lg-6">
                 <div class="card shadow-lg login-card">
                     <div class="row no-gutters">
-                        <!-- Sidebar con informacion -->
-                        <div class="col-md-6 d-none d-md-flex bg-primary text-white p-4 align-items-center flex-column">
-                            <h2 class="text-center mb-4">Te damos la bienvenida a EduViaje</h2>
-                            <p class="text-center">Donde podrás solicitar servicios de transporte que te asegurarán llegar a tiempo a tus clases.</p>
-                            <!-- Imagen del logo -->
-                            <img src="../../static/Logo y icon/Sin título-3.png" alt="Logo" class="img-fluid logo-img">
-                        </div>
-                        <!-- Formulario de inicio de sesion -->
-                        <div class="col-md-6 p-4">
-                            <h2 class="text-center mb-4">Inicia sesión en EduViaje</h2>
-                            <form method="POST" action="">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <label for="name">Nombre</label>
-                                    <input type="text" name="name" id="name" required class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Contraseña</label>
-                                    <input type="password" name="password" id="password" required class="form-control">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-block btn-login">Iniciar sesión</button>
-                            </form>
-                            <p class="mt-4 text-center">
-                                ¿No tienes una cuenta? <a href="{% url 'selection' %}">Regístrate</a>
-                            </p>
-                        </div>
+                            <table class="table">
+                                <thead class="table-primary">
+                                    <tr>
+                                        <th>Origen</th>
+                                        <th>Destino</th>
+                                        <th>Costo</th>
+                                        <th>Usuario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{{ viajes.origin }}</td>
+                                    <td>{{ viajes.destiny }}</td>
+                                    <td>{{ viajes.cost }}</td>
+                                    <td>{{ viajes.user }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        <form action="{% url 'pagarViaje' viajes.pk %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-block">PAGAR</button>
+                        </form>
                     </div>
                 </div>
             </div>

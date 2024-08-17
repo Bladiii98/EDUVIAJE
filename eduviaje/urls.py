@@ -32,6 +32,8 @@ urlpatterns = [
     path('registro', userViews.seleccion, name="selection"),
     path('conducto',driverViews.create,name='create'),
     path('usuario',userViews.create,name='create2'),
-    path('viajar',driverViews.recibirViaje ,name='viajar'),
-    path('crear',userViews.crearViaje, name="crearViaje"),
+    path('viajar/<int:id>',driverViews.recibirViaje ,name='viajar'),
+    path('crear/',userViews.crearViaje, name="crearViaje"),
+    path('pagar/<int:id>',userViews.pagarViaje ,name="pagarViaje"),
+    path('elegir/<int:iddriver>/<int:idviaje>',driverViews.elegirViaje, name='recibir'),
 ]

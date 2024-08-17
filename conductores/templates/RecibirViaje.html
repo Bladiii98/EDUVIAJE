@@ -89,18 +89,16 @@
             <thead class="table-primary">
                 <tr>
                     <th>Nombre</th>
-                    <th>Password</th>
+                    <th>Vehiculo</th>
                     <th>Phone</th>
                 </tr>
             </thead>
             <tbody>
-            {% for item in conductor %}
             <tr>
-                <td>{{ item.name }}</td>
-                <td>{{ item.password }}</td>
-                <td>{{ item.phone }}</td>
+                <td>{{ conductor.name }}</td>
+                <td>{{ conductor.vehiculo }}</td>
+                <td>{{ conductor.phone }}</td>
             </tr>
-            {% endfor %}
             </tbody>
         </table>
 
@@ -110,6 +108,7 @@
                     <th>Origen</th>
                     <th>Destino</th>
                     <th>Usuario</th>
+                    <th>Aceptar Viaje</th>
                 </tr>
             </thead>
             <tbody>
@@ -118,6 +117,12 @@
                 <td>{{ item.origin }}</td>
                 <td>{{ item.destiny }}</td>
                 <td>{{ item.user }}</td>
+                <td>
+                    <form action="{% url 'recibir'  conductor.pk item.pk%}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary btn-block">Elegir</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
             </tbody>

@@ -62,17 +62,22 @@ def login(request):
 
 def crearViaje(request):
     if request.method == 'POST':
-        if request.method == 'POST':
-            origin = request.POST['origin']
-            destiny = request.POST['destiny']
-            userId = request.POST['userId']
-            costo = request.POST['costo']
+        origin = request.POST['origin']
+        destiny = request.POST['destiny']
+        userId = request.POST['userId']
+        costo = request.POST['costo']
+        viaje = Viaje(origin=origin, destiny=destiny, user=Usuario.objects.get(pk=userId), status=False,cost=costo)
+        viaje.save()
 
-            viaje = Viaje(origin=origin, destiny=destiny, user=Usuario.objects.get(pk=userId), status=False,cost=costo)
-            viaje.save()
-
-            viajes = Viaje.objects.all()
-            conductor = Conductor.objects.all()
-            return render(request, 'RecibirViaje.html', {"viajes": viajes, "conductor": conductor})
+        return render(request, 'pagar.html', {"viajes": viaje})
 
     return render(request, 'CrearViaje.html')
+
+def pagarViaje(request, id):
+    if request.method == 'POST':
+        viaje = Viaje.objects.get(pk=id)
+        viaje.status = True
+        viaje.save()
+        return redirect('index')
+
+

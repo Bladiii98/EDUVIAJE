@@ -7,3 +7,6 @@ class Vehiculo(models.Model):
     brand = models.CharField(max_length=50)
 
     # Métodos: actualizarEstado()
+
+    def __str__(self):
+        return f"Modelo:{self.type} Registr:{self.registry} Capacidad:{self.capacity} Marca:{self.brand}"
