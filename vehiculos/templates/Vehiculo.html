@@ -121,7 +121,7 @@
         <div class="form-section">
             <h1>Registro Vehículo</h1>
             <form action="" method="POST">
-
+                {% csrf_token %}
                 <label>Marca del Vehículo:</label>
                 <input type="text" id="brand" name="brand">
 

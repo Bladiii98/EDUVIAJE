@@ -96,7 +96,7 @@
             <tbody>
             <tr>
                 <td>{{ conductor.name }}</td>
-                <td>{{ conductor.vehiculo }}</td>
+                <td>{{ conductor.vehicle }}</td>
                 <td>{{ conductor.phone }}</td>
             </tr>
             </tbody>
@@ -108,6 +108,7 @@
                     <th>Origen</th>
                     <th>Destino</th>
                     <th>Usuario</th>
+                    <th>Paga</th>
                     <th>Aceptar Viaje</th>
                 </tr>
             </thead>
@@ -117,6 +118,7 @@
                 <td>{{ item.origin }}</td>
                 <td>{{ item.destiny }}</td>
                 <td>{{ item.user }}</td>
+                <td>{{ item.cost }}</td>
                 <td>
                     <form action="{% url 'recibir'  conductor.pk item.pk%}" method="POST">
                         {% csrf_token %}
